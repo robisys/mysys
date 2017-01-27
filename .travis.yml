@@ -1,1 +1,28 @@
-gg
+sudo: required
+
+language: ruby
+
+services:
+
+- docker
+
+   
+before_install:  
+- "echo  'ready?'"
+#- docker build -t robidock/myrunning .
+- docker pull robidock/myrunning
+- docker run --name testus  robidock/myrunning
+- docker ps -a
+- docker images
+#- docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" registry.example.com
+
+
+
+script:
+- docker images robidock/myrunning
+
+after_success:
+- "echo 'ready?'"
+
+deploy:
+- "echo 'ready?'"
