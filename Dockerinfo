@@ -2,3 +2,15 @@
 
 docker  images  -q  | xargs docker  rmi
 
+https://www.digitalocean.com/community/tutorials/
+ how-to-work-with-docker-data-volumes-on-ubuntu-14-04#learning-the-types-of-docker-data-volumes
+ 
+docker create -v /tmp --name datacontainer ubuntu
+docker run -t -i --volumes-from datacontainer ubuntu /bin/bash
+echo "I'm not going anywhere" > /tmp/hi
+exit
+docker run -t -i --volumes-from datacontainer ubuntu /bin/bash
+cat /tmp/hi
+
+mkdir ~/nginxlogs
+docker run -d -v ~/nginxlogs:/var/log/nginx -p 5000:80 -i nginx
