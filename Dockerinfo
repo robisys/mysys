@@ -1,6 +1,7 @@
 
 
 docker  images  -q  | xargs docker  rmi
+docker ps -a -q  | xargs docker rm
 
 https://www.digitalocean.com/community/tutorials/
  how-to-work-with-docker-data-volumes-on-ubuntu-14-04#learning-the-types-of-docker-data-volumes
