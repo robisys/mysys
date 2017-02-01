@@ -1,8 +1,9 @@
 #!/bin/bash
 echo start-rp.sh
 date
-HTTP_PROXY="internet.magdeburg.de:8000"
-HTTPS_PROXY="internet.magdeburg.de:8000"
+##  set  real  proxyserver
+HTTP_PROXY="proxy_server"
+HTTPS_PROXY="proxy_server"
 export  HTTP_PROXY
 export  HTTPS_PROXY
 trap '[ "$?" -eq 0 ] || read -p "Looks like something went wrong in step Â´$STEPÂ´... Press any key to continue..."' EXIT
