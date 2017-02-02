@@ -46,3 +46,24 @@ echo "I'm not going anywhere" > /tmp/hi
 exit
 docker run -t -i --volumes-from -h DATACON datacsuse robidock/opensuse  /bin/bash
 cat /tmp/hi
+
+
+# docker search mysql
+# docker pull mysql
+# docker run -e MYSQLROOT_PASSWORD=geheim -p 4242:3306 mysql
+
+# docker pause my_db
+# docker run --rm --volume-from my_db  -v /data/backup:/backup  myregistry/foo/dbbackup
+# docker unpause my_db
+
+docker export my_db  > my_db.ta
+
+
+#liefert Liste nicht mehr benötigter Image Fragmente
+# docker images -f dangling=true 
+
+Konsolen-Ausgabe wird von Docker im Verzeichnis 
+# /var/lib/docker/containers/<container_id> im JSON-Format abgelegt
+
+docker run -it --rm --name gustav4 -h gusti myimg1 bash
+
