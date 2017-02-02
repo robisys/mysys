@@ -65,5 +65,6 @@ docker export my_db  > my_db.ta
 Konsolen-Ausgabe wird von Docker im Verzeichnis 
 # /var/lib/docker/containers/<container_id> im JSON-Format abgelegt
 
-docker run -it --rm --name gustav4 -h gusti myimg1 bash
+docker run -it --rm --name gustav4 -h gusti robidock/opensuse  /bin/bash
 
+docker run -it --name vol-test -h CONTAINER -v /data robidock/opensuse  /bin/bash
