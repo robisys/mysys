@@ -44,6 +44,7 @@ docker create -v /tmp --name datasuse robidock/opensuse
 docker run -t -i --volumes-from -h DATACON datasuse robidock/opensuse   /bin/bash
 echo "I'm not going anywhere" > /tmp/hi
 exit
+docker run -it --rm --name vol-test3  -h CONTAINER -v my-vol:/data robidock/opensuse  /bin/bash
 docker run -t -i --volumes-from -h DATACON datacsuse robidock/opensuse  /bin/bash
 cat /tmp/hi
 
@@ -72,4 +73,8 @@ docker export my_db  > my_db.ta
 
 docker volume create  --name my-vol
 docker run -it --rm --name voltest1 -h CONTAIN1 -v my-vol:/mydata robidock/opensuse /bin/bash
+
+
+docker run -it --rm --name vol-test3  -h CONTAINER -v my-vol:/data robidock/opensuse  /bin/bash
+
 
