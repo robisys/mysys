@@ -33,6 +33,7 @@ Now restart your vm for the above proxy settings to take effect via
 
 
 > docker  images  -q  | xargs docker  rmi
+
 > docker ps -a -q  | xargs docker rm
 
 [tutorial](https://www.digitalocean.com/community/tutorials/how-to-work-with-docker-data-volumes-on-ubuntu-14-04#learning-the-types-of-docker-data-volumes)
@@ -48,8 +49,10 @@ Now restart your vm for the above proxy settings to take effect via
 > docker run -d -v ~/nginxlogs:/var/log/nginx -p 5000:80 -i nginx
 
 
-> docker create -v /tmp --name datasuse robidock/opensuse 
+> docker create -v /tmp --name datasuse robidock/opensuse
+
 > docker run -t -i --volumes-from -h DATACON datasuse robidock/opensuse   /bin/bash
+
 > echo "I'm not going anywhere" > /tmp/hi
 > exit
 > docker run -t -i --volumes-from -h DATACON datacsuse robidock/opensuse  /bin/bash
