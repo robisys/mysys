@@ -14,8 +14,10 @@ with WinScp to the docker host using DOCKER_HOST IP login user:docker and pwd:tc
 Edit the user profile to add the following proxy settings:
 
 > sudo vi /var/lib/boot2docker/profile
-    weiter
->  Press 'i' to start editing mode
+
+  weiter
+  
+> Press 'i' to start editing mode
 
 > export HTTP_PROXY=http://your.proxy.name:8080
 
@@ -52,27 +54,27 @@ Now restart your vm for the above proxy settings to take effect via
 > cat /tmp/hi
 
 
-> # docker search mysql
-> # docker pull mysql
-> # docker run -e MYSQLROOT_PASSWORD=geheim -p 4242:3306 mysql
+>  docker search mysql
+>  docker pull mysql
+>  docker run -e MYSQLROOT_PASSWORD=geheim -p 4242:3306 mysql
 
-> # docker pause my_db
-> # docker run --rm --volume-from my_db  -v /data/backup:/backup  myregistry/foo/dbbackup
-> # docker unpause my_db
+> docker pause my_db
+> docker run --rm --volume-from my_db  -v /data/backup:/backup  myregistry/foo/dbbackup
+>  docker unpause my_db
 
 > docker export my_db  > my_db.ta
 
 
 ##liefert Liste nicht mehr benötigter Image Fragmente
-> # docker images -f dangling=true 
+> docker images -f dangling=true 
 
 ##Konsolen-Ausgabe wird von Docker im Verzeichnis 
-> # /var/lib/docker/containers/<container_id> im JSON-Format abgelegt
+>  /var/lib/docker/containers/<container_id> im JSON-Format abgelegt
 
-> #docker run -it --rm --name gustav4 -h gusti robidock/opensuse  /bin/bash
+> docker run -it --rm --name gustav4 -h gusti robidock/opensuse  /bin/bash
 
-> #docker run -it --name vol-test -h CONTAINER -v /data robidock/opensuse  /bin/bash
-> #  /data  in /var/lib/docker/volumes/<VOLUME>/_data
+> docker run -it --name vol-test -h CONTAINER -v /data robidock/opensuse  /bin/bash
+>  /data  in /var/lib/docker/volumes/<VOLUME>/_data
 
 > docker volume create  --name my-vol
 > docker run -it --rm --name voltest1 -h CONTAIN1 -v my-vol:/mydata robidock/opensuse /bin/bash
