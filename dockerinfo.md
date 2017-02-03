@@ -1,11 +1,14 @@
-https://github.com/docker/kitematic/wiki/Common-Proxy-Issues-&-Fixes
+[Common-Proxy-Issues ](https://github.com/docker/kitematic/wiki/Common-Proxy-Issues-&-Fixes)
 
 Add Proxy settings to VM
 
 If you have an enterprise proxy between your workstation and the public internet you also need to configure
 this proxy in your boot2docker vm host.
 
-Login to the VM via docker-machine ssh default (on windows, it may be easier to connect 
+Login to the VM via 
+> docker-machine ssh default
+
+(on windows, it may be easier to connect 
 with WinScp to the docker host using DOCKER_HOST IP login user:docker and pwd:tcuser)
 
 Edit the user profile to add the following proxy settings:
