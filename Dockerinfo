@@ -77,4 +77,11 @@ docker run -it --rm --name voltest1 -h CONTAIN1 -v my-vol:/mydata robidock/opens
 
 docker run -it --rm --name vol-test3  -h CONTAINER -v my-vol:/data robidock/opensuse  /bin/bash
 
+##  /bin/bash
+#   echo $PS1
+
+## Dockerfile
+
+docker volume create  --name my-vol
+docker run -it --rm --name gustav -h gusti -v my-vol:/data robidock/opensuse  /data/billi
 
