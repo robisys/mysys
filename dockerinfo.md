@@ -14,9 +14,13 @@ with WinScp to the docker host using DOCKER_HOST IP login user:docker and pwd:tc
 Edit the user profile to add the following proxy settings:
 
 > sudo vi /var/lib/boot2docker/profile
-> # Press 'i' to start editing mode
+    weiter
+>  Press 'i' to start editing mode
+
 > export HTTP_PROXY=http://your.proxy.name:8080
+
 > export HTTPS_PROXY=http://your.proxy.name:8080
+
 > # Press 'escape' and then type ':x' to save and exit the file. 
 
 Now restart your vm for the above proxy settings to take effect via
@@ -25,12 +29,12 @@ Now restart your vm for the above proxy settings to take effect via
 
 
 > docker  images  -q  | xargs docker  rmi
->docker ps -a -q  | xargs docker rm
+> docker ps -a -q  | xargs docker rm
 
 [tutorial](https://www.digitalocean.com/community/tutorials/how-to-work-with-docker-data-volumes-on-ubuntu-14-04#learning-the-types-of-docker-data-volumes)
  
 > docker create -v /tmp --name datacontainer ubuntu
-> docker run -t -i --volumes-from datacontainer ubuntu /bin/bash
+  docker run -t -i --volumes-from datacontainer ubuntu /bin/bash
 > echo "I'm not going anywhere" > /tmp/hi
 > exit
 > docker run -t -i --volumes-from datacontainer ubuntu /bin/bash
