@@ -40,6 +40,10 @@ mkdir ~/nginxlogs
 docker run -d -v ~/nginxlogs:/var/log/nginx -p 5000:80 -i nginx
 
 
+
+#docker push robidock/opensuse:latest
+
+
 docker create -v /tmp --name datasuse robidock/opensuse 
 docker run -t -i --volumes-from -h DATACON datasuse robidock/opensuse   /bin/bash
 echo "I'm not going anywhere" > /tmp/hi
@@ -87,3 +91,50 @@ docker run -it --rm --name gustav -h gusti -v my-vol:/data robidock/opensuse  /d
 
 sudo mc
 /var/lib/docker/volumes/my-vol
+
+#docker stop my-xsuse
+#docker  commit -m "Added My " -a "Robert "    my-xsuse        robidock/opensuse:latest
+
+#docker export -o myimg.tar myimg
+#docker import myimg.tar myimg
+docker run -it --name myimgcont1 myimg bash
+
+#docker stop my-xsuse
+#docker  commit -m "Added Myrunning " -a "Robert "    myimgcont1        robidock/myrunning:latest
+
+docker push robidock/myrunning:latest
+
+#docker stop my-xsuse
+#docker  commit -m "Added My " -a "Robert "    my-xsuse        robidock/testus:latest
+
+#docker push robidock/testus:latest
+#docker stop ${docker ps -a -q}
+#docker  ps -q -a | xargs docker rm 
+#docker run  --name  my-testus -it  robidock/testus:latest bash
+docker run -it  --name gusti3 carlad/sinatra /bin/sh 
+
+docker  ps -q -a | xargs docker rm 
+docker  images  -q | xargs docker rmi 
+
+docker  run --name my-x3redis  -p 6379:6379 -it robidock/my-redis:latest bash 
+
+tar -c .  | docker import -c=ENV DEBUG true  - exampleimagdedir  
+
+docker build -t myimage:latest . 
+
+docker build  -f docker3/Dockerfile docker3
+
+# Dockerfile for simple python webserver
+# Version 1.0
+FROM lukaspustina/docker_demo_python
+
+MAINTAINER Lukas Pustina <lukas.pustina@codecentric.de>
+
+EXPOSE 8080
+
+ADD webserver.py /opt/webserver/webserver.py
+ADD run.sh /opt/webserver/run.sh
+
+VOLUME ["/logs"]
+
+
