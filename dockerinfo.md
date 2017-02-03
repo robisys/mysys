@@ -13,15 +13,14 @@ with WinScp to the docker host using DOCKER_HOST IP login user:docker and pwd:tc
 
 Edit the user profile to add the following proxy settings:
 
-sudo vi /var/lib/boot2docker/profile
-
-# Press 'i' to start editing mode
-export HTTP_PROXY=http://your.proxy.name:8080
-export HTTPS_PROXY=http://your.proxy.name:8080
-# Press 'escape' and then type ':x' to save and exit the file. 
+> sudo vi /var/lib/boot2docker/profile
+ # Press 'i' to start editing mode
+ export HTTP_PROXY=http://your.proxy.name:8080
+ export HTTPS_PROXY=http://your.proxy.name:8080
+ # Press 'escape' and then type ':x' to save and exit the file. 
 
 Now restart your vm for the above proxy settings to take effect via
-docker-machine restart default
+> docker-machine restart default
 
 
 
