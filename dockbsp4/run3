@@ -1,0 +1,2 @@
+docker run -d --name myimgr1  -v my-vol:/data -p 8003:8080 mysuse /data/jstest/server.js
+
