@@ -78,6 +78,10 @@ docker export my_db  > my_db.ta
 docker volume create  --name my-vol
 docker run -it --rm --name voltest1 -h CONTAIN1 -v my-vol:/mydata robidock/opensuse /bin/bash
 
+docker create -v /dbdata  --name  dbstore   robidock/opensuse /bin/bash
+docker run -it --volumes-from dbstore  --name db1 robidock/opensuse /bin/bash
+
+
 
 docker run -it --rm --name vol-test3  -h CONTAINER -v my-vol:/data robidock/opensuse  /bin/bash
 
