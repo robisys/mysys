@@ -1,0 +1,4 @@
+echo docker stop 
+docker stop myimgr1  
+echo docker rm   
+docker rm   myimgr1
