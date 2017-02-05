@@ -141,4 +141,12 @@ ADD run.sh /opt/webserver/run.sh
 
 VOLUME ["/logs"]
 
+########
+echo $PS1
+export PS1="\u@\h:\w>"
+
+docker ps -a -q| xargs docker stop
+docker ps -a -q| xargs docker rm
+docker volume ls
+
 
