@@ -4,3 +4,8 @@ at all because they are trying to use 8.8.8.8 as their DNS server.
 Docker should detect the network DNS server.
 
 https://github.com/docker/docker/issues/23910
+
+docker run busybox nslookup google.com
+cat /etc/os-release 
+docker version
+docker info
