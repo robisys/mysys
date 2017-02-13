@@ -1,0 +1,27 @@
+http://www.netinstructions.com/how-to-install-docker-on-windows-behind-a-proxy/
+
+Let's connect to the Docker machine by typing
+
+docker-machine ssh default
+
+Once connected to the Docker machine, get root access by typing
+
+sudo -s
+
+Then configure the proxy:
+
+echo "export HTTP_PROXY=http://username:password@corporate.proxy.com:port" >> /var/lib/boot2docker/profile
+echo "export HTTPS_PROXY=http://username:password@corporate.proxy.com:port" >> /var/lib/boot2docker/profile
+
+You can verify that they've been written to the profile file by typing:
+
+cat /var/lib/boot2docker/profile
+
+Then exit out of root by typing exit and then exit out of the SSH session by typing exit again.
+
+Finally restart the Docker machine by typing
+
+docker-machine restart default
+
+Success!
+
