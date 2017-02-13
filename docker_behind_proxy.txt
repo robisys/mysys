@@ -25,3 +25,4 @@ docker-machine restart default
 
 Success!
 
+http://mflo.io/2015/08/13/docker-machine-behind-proxy/
