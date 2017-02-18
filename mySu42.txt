@@ -1,0 +1,33 @@
+docker run -it --name mySu42 -h CONT opensuse:latest  /bin/bash
+docker stop mySu42
+docker start -i mySu42
+    zypper install mc
+    zypper update
+    echo "export PS1="\u@\h:>"  >/root/.bashrc
+    echo "export TERM=linux"   >/root/.bashrc
+    
+docker stop mySu42
+docker export mySu42 -o ./mySu42.tar
+
+----
+Browser load mySu42.txt (this file)
+        load mySu42.tar
+
+
+docker import mySu42.tar
+
+docker tag <ImageID> <neuerName>
+
+docker commit  container  Image
+
+
+docker ps -
+docker ps
+docker images
+docker ps -a -q | xargs rm
+docker images -q | xargs docker rmi
+
+repository registry container Image Volume
+
+    
+    
