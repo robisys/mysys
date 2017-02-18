@@ -3,7 +3,7 @@ docker stop mySu42
 docker start -i mySu42
     zypper install mc
     zypper update
-    echo "export PS1="\u@\h:>"  >/root/.bashrc
+    echo "export PS1=\u@\h:>"  >/root/.bashrc
     echo "export TERM=linux"   >/root/.bashrc
     
 docker stop mySu42
